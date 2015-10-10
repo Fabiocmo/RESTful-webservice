@@ -62,6 +62,7 @@ public class StudentResource {
 		student.setMobile(mobile);
 		MyConnection conn= new MyConnection();
 		String status=conn.connectWithDetail(student);
+		System.out.println(status);
 		if(status.equals("SUCCESS"))
 		return Response.status(200).entity(status).build();
 		else

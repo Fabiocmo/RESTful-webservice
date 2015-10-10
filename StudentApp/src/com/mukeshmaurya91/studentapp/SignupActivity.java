@@ -31,6 +31,7 @@ public class SignupActivity extends Activity {
 	private Long Roll, Mobile;
 	private int rollLength, mobileLength;
 	int row = 0;
+	long row1=0;
 	private String RESOURCE_URL;
 
 	@Override
@@ -81,23 +82,12 @@ public class SignupActivity extends Activity {
 		} catch (NumberFormatException e) {
 		}
 		if (validdateInfo()) {
-			long row1 = dba.insertData(Name, Roll, Email, Pass, Mobile, 0);
+			 row1 = dba.insertData(Name, Roll, Email, Pass, Mobile, 0);
 			try {
 				if (isConnected())
 					new WebServiceTask().execute(RESOURCE_URL);
 			} catch (Exception e) {
 			}
-
-			if (row > 0 && row1 > 0) {
-				Toast.makeText(this, "Successfully sign up!",
-						Toast.LENGTH_SHORT).show();
-				Bundle b = new Bundle();
-				b.putLong("com.mukeshmaurya91.studentApp.rollNumber", Roll);
-				startActivity(new Intent(this, ImageSelectorActivity.class)
-						.putExtras(b));
-			} else
-				Toast.makeText(this, "Unsuccessfully ! Please try again.",
-						Toast.LENGTH_SHORT).show();
 		}
 
 	}
@@ -199,8 +189,18 @@ public class SignupActivity extends Activity {
 			pd.dismiss();
 			Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG)
 					.show();
-			super.onPostExecute(result);
+			if (row > 0 && row1 > 0) {
+				Toast.makeText(SignupActivity.this, "Successfully sign up!",
+						Toast.LENGTH_SHORT).show();
+				Bundle b = new Bundle();
+				b.putLong("com.mukeshmaurya91.studentApp.rollNumber", Roll);
+				startActivity(new Intent(SignupActivity.this, ImageSelectorActivity.class).putExtras(b));
+			} else{
+				Toast.makeText(SignupActivity.this, "Unsuccessfully ! Please try again.",
+						Toast.LENGTH_SHORT).show();
 		}
+			super.onPostExecute(result);
 
+	}
 	}
 }
