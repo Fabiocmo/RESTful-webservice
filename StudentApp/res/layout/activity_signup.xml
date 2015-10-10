@@ -1,0 +1,105 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mukeshmaurya91.studentapp.SignupActivity" >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitXY"
+        android:src="@drawable/stu_bg" />
+
+    <TextView
+        android:id="@+id/sign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/sign"
+        android:textColor="#fff"
+        android:textSize="45sp" />
+    <View 
+        android:id="@+id/bar1"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/sign"
+        android:layout_marginTop="10dp"
+        android:layout_height="2dp"
+        android:background="#987654"/>
+
+    <EditText
+        android:id="@+id/sign_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bar1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+         android:layout_marginRight="30dp"
+        android:layout_marginTop="40dp"
+        android:textColorHint="#B3ffffff"
+        android:hint="@string/sign_name" />
+     <EditText
+        android:id="@+id/sign_roll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sign_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+         android:layout_marginRight="30dp"
+        android:hint="@string/sign_roll"
+        android:textColorHint="#B3ffffff"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/sign_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sign_roll"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+         android:layout_marginRight="30dp"
+        android:hint="@string/sign_email"
+        android:textColorHint="#B3ffffff"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/sign_mobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sign_email"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+         android:layout_marginRight="30dp"
+        android:hint="@string/sign_mobile"
+        android:textColorHint="#B3ffffff"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/sign_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sign_mobile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+         android:layout_marginRight="30dp"
+        android:hint="@string/sign_pass"
+        android:textColorHint="#B3ffffff"
+        android:inputType="textPassword" />
+
+    <Button
+        style="@style/button_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sign_pass"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:onClick="signUp"
+         android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/sign_up_btn" />
+
+</RelativeLayout>

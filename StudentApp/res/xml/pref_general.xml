@@ -1,0 +1,12 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <EditTextPreference
+        android:defaultValue="99.59.19.5"
+        android:key="HOST_PREF"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/disp_setting"
+        android:summary="@string/summary_pref"
+         android:dialogTitle="@string/title_pref"  />
+</PreferenceScreen>

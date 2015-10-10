@@ -1,0 +1,64 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#bacada"
+    tools:context="com.mukeshmaurya91.studentapp.MainActivity" >
+    <ImageView 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/stu_bg"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/welcome"
+        />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="55dp"
+        android:textSize="24sp"
+        android:textColor="#fff"
+        android:text="@string/welcome" />
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_but"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:text="@string/not_yet"
+        android:textColor="#fff"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/login_but"
+        style="@style/button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:drawableLeft="@android:drawable/ic_lock_lock"
+        android:drawableStart="@android:drawable/ic_lock_lock"
+        android:text="@string/login_action" />
+
+     <Button
+         android:id="@+id/sign_but"
+         style="@style/button_style"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/text1"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="34dp"
+         android:drawableLeft="@android:drawable/ic_input_add"
+         android:drawableStart="@android:drawable/ic_input_add"
+         android:paddingLeft="25dp"
+         android:paddingRight="25dp"
+         android:text="@string/sign_up" />
+
+</RelativeLayout>

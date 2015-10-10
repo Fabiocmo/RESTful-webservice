@@ -1,0 +1,80 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mukeshmaurya91.studentapp.LoginActivity" >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitXY"
+        android:src="@drawable/stu_bg" />
+
+    <TextView
+        android:id="@+id/login_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/login_action"
+        android:textColor="#fff"
+        android:textSize="45sp" />
+
+    <View
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_below="@+id/login_title"
+        android:layout_marginTop="20dp"
+        android:background="#987654" />
+
+    <EditText
+        android:id="@+id/roll_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bar"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="100dp"
+        android:hint="@string/sign_roll"
+        android:inputType="number"
+        android:textColorHint="#B3ffffff" >
+    </EditText>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/roll_no"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="10dp"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:textColorHint="#B3ffffff" />
+
+    <Button
+        android:id="@+id/button_login"
+        style="@style/button_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/login" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:onClick="forgotPassword"
+        android:text="@string/forgot"
+        android:textColor="#fff"
+        android:textSize="18sp" />
+
+</RelativeLayout>

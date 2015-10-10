@@ -1,0 +1,53 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mukeshmaurya91.studentapp.OTPSendActivity" >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitXY"
+        android:src="@drawable/stu_bg" />
+    
+    <TextView
+        android:id="@+id/otp_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="#fff"
+        android:textSize="40sp"
+        android:text="@string/otp_send" />
+    <View 
+        android:id="@+id/bar2"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/otp_send"
+        android:layout_marginTop="20dp"
+        android:layout_height="3dp"
+        android:background="#987654"/>
+    <EditText
+        android:id="@+id/otp_mobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bar2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="30dp"
+         android:layout_marginRight="30dp"
+        android:hint="@string/sign_mobile"
+        android:textColorHint="#B3ffffff"
+        android:inputType="number" />
+
+    <Button
+        style="@style/button_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/otp_mobile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+         android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/send_otp_btn" />
+
+</RelativeLayout>
