@@ -164,17 +164,10 @@ public class SignupActivity extends Activity {
 				os.close();
 				int responseCode = urlConnection.getResponseCode();
 				if (responseCode == HttpURLConnection.HTTP_OK) {
+					BufferedReader br = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+					response = br.readLine();
 					row = 1;
-					String line;
-					BufferedReader br = new BufferedReader(
-							new InputStreamReader(
-									urlConnection.getInputStream()));
-					while ((line = br.readLine()) != null) {
-						response += line;
-					}
-				} else {
-					response = "Error";
-
+				br.close();
 				}
 				urlConnection.disconnect();
 			} catch (Exception e) {
@@ -187,17 +180,16 @@ public class SignupActivity extends Activity {
 		@Override
 		protected void onPostExecute(String result) {
 			pd.dismiss();
-			Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG)
-					.show();
-			if (row > 0 && row1 > 0) {
-				Toast.makeText(SignupActivity.this, "Successfully sign up!",
-						Toast.LENGTH_SHORT).show();
+			if(result.equals("SUCCESS"))
+				row = 1;
+			Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
+			if (row > 0) {
+				Toast.makeText(SignupActivity.this, "Successfully sign up!",Toast.LENGTH_SHORT).show();
 				Bundle b = new Bundle();
 				b.putLong("com.mukeshmaurya91.studentApp.rollNumber", Roll);
 				startActivity(new Intent(SignupActivity.this, ImageSelectorActivity.class).putExtras(b));
 			} else{
-				Toast.makeText(SignupActivity.this, "Unsuccessfully ! Please try again.",
-						Toast.LENGTH_SHORT).show();
+				Toast.makeText(SignupActivity.this, "Unsuccessfully ! Please try again.",Toast.LENGTH_SHORT).show();
 		}
 			super.onPostExecute(result);
 
